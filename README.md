@@ -3,6 +3,7 @@
 Mirror (or header to) uploaded files from a remote production site on your local development copy. Saves the trouble of downloading a giant uploads directory without sacrificing the images that accompany content.
 
 ## Configuration
+
 Define below constants in your wp-config.php file to configure Stage File Proxy plugin features.
 
 ```php
@@ -21,3 +22,7 @@ define( 'STAGE_FILE_PROXY_URL', 'https://example.com/wp-content/uploads/' );
  */
 define( 'STAGE_FILE_PROXY_MODE', 'header' );
 ```
+
+### ⚠️ DISCLAIMER
+
+Do not push this plugin to production site or to the site defined as proxy URL ( STAGE_FILE_PROXY_URL ). To prevent add this plugin in .gitignore file
