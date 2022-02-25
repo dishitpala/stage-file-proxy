@@ -304,7 +304,12 @@ function sfp_get_random_local_file_path( $doing_resize ) {
  * SFP can operate in two modes, 'download' and 'header'
  */
 function sfp_get_mode() {
-	static $mode;
+	$mode = '';
+
+	if ( defined( 'STAGE_FILE_PROXY_MODE' ) ) {
+		$mode = STAGE_FILE_PROXY_MODE;
+	}
+
 	if ( ! $mode ) {
 		$mode = get_option( 'sfp_mode' );
 		if ( ! $mode ) {
@@ -318,8 +323,14 @@ function sfp_get_mode() {
  * Get the base URL of the uploads directory (i.e. the first possible directory on the remote side that could store a file)
  */
 function sfp_get_base_url() {
-	static $url;
+	$url = '';
+
+	if ( defined( 'STAGE_FILE_PROXY_URL' ) ) {
+		$url = STAGE_FILE_PROXY_URL;
+	}
+
 	$mode = sfp_get_mode();
+
 	if ( ! $url ) {
 		$url = get_option( 'sfp_url' );
 		if ( ! $url && 'local' !== $mode ) {
