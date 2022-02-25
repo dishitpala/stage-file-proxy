@@ -7,7 +7,7 @@ Define below constants in your wp-config.php file to configure Stage File Proxy 
 
 ```php
 // Define proxy url to fetch media from.
-define( 'STAGE_FILE_PROXY_URL', 'https://global.videojet.com/wp-content/uploads/' );
+define( 'STAGE_FILE_PROXY_URL', 'https://example.com/wp-content/uploads/' );
 
 /**
  * Define mode to mirror the media.
